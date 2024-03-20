@@ -16,9 +16,8 @@ def minOperations(n):
     while current < n:
         if n % current == 0:
             operations += 2
-            current *= 2  # Double the count after pasting
+            current *= 2
         else:
             operations += 1
-            current += current  # Increment the count by itself
-    
+            current += current    
     return operations
