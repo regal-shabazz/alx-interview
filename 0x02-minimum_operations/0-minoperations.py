@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def minOperations(n):
     """
     Calculate the minimum number of operations to achieve n H characters.
