@@ -1,22 +1,21 @@
 #!/usr/bin/python3
 
-def minOperations(n):
-  """
-  Calculate the minimum number of operations to achieve n H characters.
-    Args:
-      n (int): The target number of characters.
-    
-    Returns:
-      int: The minimum number of operations.
-  """
-  operations = 0
-  current = 1
+"""
+    Method that determines the number of minmum operations given n characters
+"""
 
-  while current < n:
-    if n % current == 0:
-      operations += 2
-      current *= 2
-    else:
-      operations += 1
-      current += current    
-  return operations
+
+def minOperations(n):
+    current = 1
+    initial = 0
+    count = 0
+    while current < n:
+        remainder = n - current
+        if (remainder % current == 0):
+            initial = current
+            current += initial
+            count += 2
+        else:
+            current += initial
+            count += 1
+    return count
